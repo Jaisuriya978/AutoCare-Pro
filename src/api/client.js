@@ -47,6 +47,7 @@ api.interceptors.response.use(
           localStorage.removeItem('refresh_token');
           localStorage.removeItem('user_info');
           window.location.reload();
+          return Promise.reject(refreshErr);
         }
       }
     }
@@ -54,4 +55,4 @@ api.interceptors.response.use(
   }
 );
 
-export default api;
+export default api; 
